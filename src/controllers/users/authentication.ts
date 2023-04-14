@@ -86,7 +86,7 @@ export const logIn = async (req: Request, res: Response) => {
     await user.save();
 
     //store sessiontoken in the cookie with no expiry date becomes a session cookie
-    res.cookie('MN_sessionToken', user.authentication.sessionToken, {secure:true, httpOnly:true});
+    res.cookie('MN_sessionToken', user.authentication.sessionToken,{sameSite:'none',secure:true,domain:'movienotepadclient.onrender.com',httpOnly:true});
     return res.status(200).json({
       data: user,
       message: 'success',
