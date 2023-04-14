@@ -13,7 +13,7 @@ const app: Express = express();
 
 app.use(
   cors({
-    origin: curr === 'Development' ?  'http://localhost:5173' : 'https://movienotepadclient.onrender.com' ,
+    origin: curr === 'Development' ?  'http://localhost:5173' : 'https://movienotepadclient.onrender.com/*' ,
     credentials: true,
   })
 );
